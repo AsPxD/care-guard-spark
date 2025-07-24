@@ -14,7 +14,141 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      chat_messages: {
+        Row: {
+          created_at: string
+          id: string
+          is_from_doctor: boolean | null
+          message: string
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          is_from_doctor?: boolean | null
+          message: string
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          is_from_doctor?: boolean | null
+          message?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
+      medications: {
+        Row: {
+          active: boolean | null
+          created_at: string
+          dosage: string
+          frequency: string
+          id: string
+          name: string
+          reminder_enabled: boolean | null
+          time_of_day: string | null
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          active?: boolean | null
+          created_at?: string
+          dosage: string
+          frequency: string
+          id?: string
+          name: string
+          reminder_enabled?: boolean | null
+          time_of_day?: string | null
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          active?: boolean | null
+          created_at?: string
+          dosage?: string
+          frequency?: string
+          id?: string
+          name?: string
+          reminder_enabled?: boolean | null
+          time_of_day?: string | null
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
+      profiles: {
+        Row: {
+          child_age: number | null
+          child_name: string | null
+          created_at: string
+          emergency_contact: string | null
+          full_name: string | null
+          id: string
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          child_age?: number | null
+          child_name?: string | null
+          created_at?: string
+          emergency_contact?: string | null
+          full_name?: string | null
+          id?: string
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          child_age?: number | null
+          child_name?: string | null
+          created_at?: string
+          emergency_contact?: string | null
+          full_name?: string | null
+          id?: string
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
+      seizures: {
+        Row: {
+          created_at: string
+          date_time: string
+          duration_minutes: number | null
+          id: string
+          notes: string | null
+          seizure_type: string
+          triggers: string | null
+          updated_at: string
+          user_id: string
+          video_url: string | null
+        }
+        Insert: {
+          created_at?: string
+          date_time: string
+          duration_minutes?: number | null
+          id?: string
+          notes?: string | null
+          seizure_type: string
+          triggers?: string | null
+          updated_at?: string
+          user_id: string
+          video_url?: string | null
+        }
+        Update: {
+          created_at?: string
+          date_time?: string
+          duration_minutes?: number | null
+          id?: string
+          notes?: string | null
+          seizure_type?: string
+          triggers?: string | null
+          updated_at?: string
+          user_id?: string
+          video_url?: string | null
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
